@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Open Campus AR展示サンプル</title>
+    <title>Open Campus AR展示</title>
     <style>
       body {
         margin: 0;
@@ -11,23 +11,17 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        background-color: #fafafa;
       }
       model-viewer {
         width: 100%;
-        height: 80vh; /* 画面の8割を3D表示に */
-        background-color: #f0f0f0;
+        height: 85vh;
+        background-color: #eeeeee;
+        --poster-color: transparent;
       }
-      .controls {
-        padding: 20px;
+      .footer {
+        padding: 15px;
         text-align: center;
-      }
-      .ar-button {
-        background-color: #4285f4;
-        color: white;
-        padding: 10px 20px;
-        border-radius: 5px;
-        text-decoration: none;
-        font-weight: bold;
       }
     </style>
   </head>
@@ -37,34 +31,34 @@
       ar
       ar-modes="scene-viewer quick-look"
       camera-controls
+      autoplay
       poster="assets/poster.webp"
       shadow-intensity="1"
       exposure="1"
       environment-image="neutral"
-      alt="学生制作の3Dキャラクター"
-      auto-rotate
+      alt="学生制作キャラクター"
     >
       <button
         slot="ar-button"
         style="
           background-color: white;
-          border-radius: 4px;
-          border: none;
+          border-radius: 8px;
+          border: 1px solid #ccc;
           position: absolute;
           top: 16px;
           right: 16px;
-          padding: 10px;
+          padding: 12px 20px;
+          font-size: 16px;
+          font-weight: bold;
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
         "
       >
-        👋 ARで表示する
+        👋 ARではじめる
       </button>
     </model-viewer>
 
-    <div class="controls">
-      <h2>キャラクター展示</h2>
-      <p>
-        上のモデルをドラッグして回転できます。<br />スマホの方は右上のボタンからARを体験してください。
-      </p>
+    <div class="footer">
+      <p>指でモデルを動かせます。右上のボタンでAR起動！</p>
     </div>
 
     <script
