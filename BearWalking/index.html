@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Open CampusでAR展示</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #fafafa;
+      }
+      model-viewer {
+        width: 100%;
+        height: 85vh;
+        background-color: #eeeeee;
+        --poster-color: transparent;
+      }
+      .footer {
+        padding: 15px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <model-viewer
+      src="assets/sample.glb"
+      ar
+      ar-modes="scene-viewer quick-look"
+      camera-controls
+      autoplay
+      poster="assets/poster.webp"
+      shadow-intensity="1"
+      exposure="1"
+      environment-image="neutral"
+      alt="学生制作キャラクター"
+    >
+      <button
+        slot="ar-button"
+        style="
+          background-color: white;
+          border-radius: 8px;
+          border: 1px solid #ccc;
+          position: absolute;
+          top: 16px;
+          right: 16px;
+          padding: 12px 20px;
+          font-size: 16px;
+          font-weight: bold;
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        "
+      >
+        👋 ARではじめる
+      </button>
+    </model-viewer>
+
+    <div class="footer">
+      <p>指でモデルを動かせます。右上のボタンでAR起動！</p>
+    </div>
+
+    <script
+      type="module"
+      src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"
+    ></script>
+  </body>
+</html>
